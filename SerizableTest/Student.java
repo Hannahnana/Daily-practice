@@ -11,12 +11,17 @@ import java.io.Serializable;
  
  */
 public class Student implements Serializable{
+	/**
+	 * serialVersionUID:
+	 * (1)Adds a default UID 为1L;
+	 * (2)Adds a generated serial version ID to the selected type.此方式会根据类的内部细节自动生成的，以下这个就是~
+	 */
+	private static final long serialVersionUID = 8574558845562445651L;
 	private int id;
 	private String name;
 	private String sex;
 	//原则上序列化后的数据当中的serialVersionUID与当前类当中的serialVersionUID一致，那么该对象才能被反序列化成功。
 	 //如果反序列化一直不成功，说明当前类跟序列化后的类发生了变化，比如是成员变量的数量或者是类型发生了变化。
-	private static final long serialVersionUID =32832092390L;
 	 
 	public Student(int id, String name, String sex) {
 		this.id = id;
